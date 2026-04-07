@@ -19,10 +19,15 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
+    // Explicitly append form-name as per success prompt
+    formData.append('form-name', 'a1a-repair-quote');
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/forms.html', {
         method: 'POST',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+        },
         body: formData,
       });
 
@@ -30,8 +35,6 @@ export default function ContactForm() {
         setIsSubmitted(true);
       } else {
         console.error('Form submission failed');
-        // Fallback to success for demo purposes if needed, but better to show error
-        // setIsSubmitted(true); 
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -101,6 +104,7 @@ export default function ContactForm() {
                   className="space-y-8"
                   name="a1a-repair-quote"
                   method="POST"
+                  action="/forms.html"
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
                   encType="multipart/form-data"

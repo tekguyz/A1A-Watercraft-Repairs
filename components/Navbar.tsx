@@ -48,9 +48,6 @@ export default function Navbar() {
                 <a href="#" aria-label="Facebook" className="text-chrome-silver hover:text-safety-white transition-colors">
                   <Facebook size={20} />
                 </a>
-                <a href="#" aria-label="Yelp" className="text-chrome-silver hover:text-safety-white transition-colors font-bold text-lg leading-none">
-                  Yelp
-                </a>
               </div>
               <Link href="#contact" className="btn-shimmer bg-warning-red text-safety-white px-6 py-2.5 font-bold hover:bg-red-700 transition-colors">
                 <span className="relative z-10">561-929-9163</span>
@@ -76,9 +73,6 @@ export default function Navbar() {
             <div className="flex items-center gap-6 py-4 border-t border-white/10">
               <a href="#" aria-label="Facebook" className="text-chrome-silver hover:text-safety-white">
                 <Facebook size={24} />
-              </a>
-              <a href="#" aria-label="Yelp" className="text-chrome-silver hover:text-safety-white font-bold text-xl leading-none">
-                Yelp
               </a>
             </div>
             <a href="tel:5619299163" className="btn-shimmer bg-warning-red text-safety-white px-6 py-3 font-bold text-center mt-2">
