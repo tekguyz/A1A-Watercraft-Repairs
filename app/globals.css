@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warning-red: oklch(60% 0.2 25);
+  --color-fuel-slate: oklch(25% 0.02 250);
+  --color-chrome-silver: #e2e8f0;
+  --color-safety-white: #ffffff;
+  
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-oswald);
+}
+
+body {
+  background-color: var(--color-fuel-slate);
+  color: var(--color-safety-white);
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2.5s infinite;
+}
